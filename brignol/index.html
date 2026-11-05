@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Brignol Advogados</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{ --bg:#F6F4F1;--bg2:#ECE8E2;--surface:#FFFFFF;--ink:#1D1A1B;--muted:#625B5C;--line:#E2DCD5;--ac:#7A2032;--ac-soft:#F2DFE2;--ac2:#A8823F;--gold:#B8914A;--display:"Playfair Display",Georgia,serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--dw:500;--dls:-.015em;--h1:clamp(2.5rem,5.8vw,4.6rem);--hdbg:rgba(246,244,241,.9);--br:6px;--chr:10px;--rb:20px;--mk:0; --ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.g{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1140px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-family:var(--display);font-weight:var(--dw,400);line-height:1.06;margin:0;text-wrap:balance;letter-spacing:var(--dls,-.02em)}
+h2{font-size:clamp(2rem,4.4vw,3.3rem)}
+h1 em,h2 em{font-style:normal;color:var(--ac)}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ac2);font-weight:700}
+.lead{color:var(--muted);max-width:54ch;font-size:1.05rem}
+section{padding-block:clamp(72px,11vw,136px)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+.w>span{display:inline-block}
+header{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s}
+header.on{background:var(--hdbg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:var(--dw,400);font-size:1.12rem;display:block;line-height:1.15}
+.brand small{color:var(--muted);font-size:.74rem}
+nav.main{display:flex;gap:28px;align-items:center}
+nav.main a{text-decoration:none;font-size:.92rem;position:relative}
+nav.main a.lk::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:var(--ac);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+nav.main a.lk:hover::after{transform:scaleX(1);transform-origin:left}
+.menu-btn{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease)}
+.menu-btn span:first-child{top:18px}.menu-btn span:last-child{top:25px}
+.menu-open .menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:100px max(24px,env(safe-area-inset-left,0px)) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mnav{clip-path:inset(0);visibility:visible}
+.mnav a{font-family:var(--display);font-weight:var(--dw,400);font-size:2.2rem;text-decoration:none;line-height:1.3}
+@media (max-width:880px){nav.main .lk,nav.main .btn{display:none}.menu-btn{display:block}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:var(--br,999px);font-weight:700;text-decoration:none;font-size:.92rem;border:1px solid var(--ink);cursor:pointer;font-family:var(--body);background:transparent;color:var(--ink);position:relative;overflow:hidden;isolation:isolate;transition:color .45s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ink);z-index:-1;transform:translateY(101%);border-radius:inherit;transition:transform .5s var(--ease)}
+.btn:hover{color:#fff}.btn:hover::before{transform:none}
+.btn.p{background:var(--ac);border-color:var(--ac);color:var(--onac,#fff)}
+.btn.p::before{background:var(--ink)}.btn.p:hover{color:#fff}
+.btn .ar{transition:transform .45s var(--ease)}.btn:hover .ar{transform:translateX(4px)}
+.btn.sm{padding:11px 20px;font-size:.86rem}
+.mag{transition:color .45s var(--ease),transform .6s cubic-bezier(.2,1.4,.4,1)}
+.hero{min-height:min(100svh,900px);display:flex;align-items:center;padding-top:110px;padding-bottom:40px;overflow:hidden;position:relative;isolation:isolate}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;width:100%}
+.hero h1{font-size:var(--h1,clamp(2.6rem,6.2vw,5rem));margin:20px 0 24px}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:46ch;margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.tlink{font-size:.92rem;font-weight:700;text-decoration:none;padding:12px 6px;border-bottom:2px solid var(--line)}
+.stage{position:relative;aspect-ratio:5/6;width:100%;justify-self:end;clip-path:inset(-40% -30% 0 -30%)}
+.cut{position:absolute;left:50%;bottom:-7%;width:var(--cw,80%);max-width:none;transform:translateX(-50%);filter:drop-shadow(0 26px 30px rgba(0,0,0,.16));will-change:transform}
+.chip{position:absolute;left:-3%;bottom:18%;background:var(--surface);border:1px solid var(--line);border-radius:var(--chr,18px);padding:12px 16px;font-size:.82rem;line-height:1.35;box-shadow:0 18px 40px -22px rgba(0,0,0,.45);will-change:transform;display:flex;gap:10px;align-items:center}
+.chip small{display:block;color:var(--muted)}
+@media (max-width:880px){.hgrid{grid-template-columns:1fr}.stage{justify-self:center;max-width:420px}.chip{left:0}}
+canvas.silk{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block;background:var(--bg);-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent);mask-image:linear-gradient(to bottom,#000 72%,transparent);pointer-events:none}
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding-block:20px;background:var(--surface)}
+.mtrack{display:flex;gap:36px;width:max-content;animation:mq 46s linear infinite}
+.mtrack span{font-family:var(--display);font-weight:var(--dw,400);font-size:clamp(1.3rem,2.5vw,1.9rem);white-space:nowrap;display:flex;align-items:center;gap:36px}
+.mtrack span::after{content:"";width:10px;height:10px;background:var(--ac);border-radius:var(--mk,50%)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.shead{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+@media (max-width:760px){.shead{grid-template-columns:1fr;gap:16px}}
+.sobre{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.quote{font-family:var(--display);font-weight:var(--dw,400);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;margin:0}
+.quote em{font-style:normal;color:var(--ac)}
+.creds{display:grid;margin:28px 0 0;border-top:1px solid var(--line)}
+.creds div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding-block:14px;border-bottom:1px solid var(--line);font-size:.95rem}
+.creds dt{color:var(--muted);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding-top:3px;font-weight:700}
+.creds dd{margin:0}
+@media (max-width:860px){.sobre{grid-template-columns:1fr;gap:32px}.creds div{grid-template-columns:1fr;gap:2px}}
+.faqg{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.q{border-bottom:1px solid var(--line)}.q:first-child{border-top:1px solid var(--line)}
+.q button{width:100%;background:none;border:0;padding:22px 0;font:inherit;color:var(--ink);text-align:left;display:flex;justify-content:space-between;gap:20px;cursor:pointer;font-family:var(--display);font-weight:var(--dw,400);font-size:1.2rem;line-height:1.3}
+.q .pl{width:30px;height:30px;flex:none;border-radius:50%;background:var(--bg2);position:relative;transition:transform .5s var(--ease),background .3s}
+.q .pl::before,.q .pl::after{content:"";position:absolute;left:9px;right:9px;top:14px;height:1.5px;background:var(--ink)}
+.q .pl::after{transform:rotate(90deg);transition:transform .5s var(--ease)}
+.q[data-open] .pl{background:var(--ac-soft);transform:rotate(180deg)}.q[data-open] .pl::after{transform:rotate(0)}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.q[data-open] .a{grid-template-rows:1fr}.q .a>div{overflow:hidden}
+.q .a p{margin:0 0 22px;color:var(--muted);max-width:60ch}
+@media (max-width:860px){.faqg{grid-template-columns:1fr;gap:28px}}
+.cbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--rb,36px);padding:clamp(32px,6vw,76px);display:grid;grid-template-columns:1.2fr .8fr;gap:44px;position:relative;overflow:hidden}
+.cbox>*{position:relative;z-index:1}
+.cbox .lead{margin-top:18px}
+.cinfo{display:grid;gap:16px;align-content:start;margin:0}
+.cinfo dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ac2);font-weight:700}
+.cinfo dd{margin:2px 0 0;font-size:1.04rem}
+.cinfo a{text-decoration:none;border-bottom:1px solid var(--line)}
+@media (max-width:860px){.cbox{grid-template-columns:1fr}}
+footer{padding-block:30px 40px;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+.demo{background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:700;color:var(--ac)}
+.wa{position:fixed;right:max(20px,calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:40;width:58px;height:58px;border-radius:50%;background:var(--ac);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);transform:scale(0);transition:transform .5s var(--ease)}
+.wa.on{transform:scale(1)}.wa svg{width:26px;height:26px;fill:var(--onac,#fff)}
+.mo .split .w>span{transform:translateY(110%);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.mo.go .split:not(.pre) .w>span,.mo .split.in .w>span{transform:none}
+.mo .rv.pre{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.2s var(--ease)}
+.mo .rv.pre.in{opacity:1;transform:none}
+.mo .hero .ld{opacity:0;transform:translateY(22px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.mo.go .hero .ld{opacity:1;transform:none}
+.mo .hero p.ld{transition-delay:.45s}.mo .hero .cta.ld{transition-delay:.6s}
+.mo .hero .stage{opacity:0;transform:translateY(30px) scale(.97);transition:opacity 1.3s var(--ease) .2s,transform 1.5s var(--ease) .2s}
+.mo.go .hero .stage{opacity:1;transform:none}
+.logo{width:40px;height:40px;border-radius:6px;background:var(--ac);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:1.4rem;box-shadow:inset 0 0 0 3px var(--ac),inset 0 0 0 4px var(--gold)}
+.back{position:absolute;inset:8% 4% -30% 4%;border-radius:18px;background:linear-gradient(160deg,#8C2A3E,var(--ac) 55%,#561523);overflow:hidden}
+.back::before{content:"";position:absolute;inset:16px;border:1px solid rgba(232,200,140,.45);border-radius:10px}
+.cut{bottom:auto!important;top:14%;width:auto!important;filter:none!important;text-align:center;color:#F3E6D2}
+.mono{font-family:var(--display);font-size:clamp(9rem,22vw,15rem);line-height:.9;display:block;background:linear-gradient(180deg,#F6E6C8,#C9A15C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cut small{display:block;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#E8CFA3;margin-top:10px}
+.balanca{width:64px;height:64px;margin:18px auto 0;display:block;stroke:#E8CFA3;fill:none;stroke-width:1.3;animation:bal 5s ease-in-out infinite;transform-origin:32px 14px}
+@keyframes bal{25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}}
+.pill{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:.8rem;font-weight:600;box-shadow:0 14px 30px -18px rgba(0,0,0,.4);animation:flut 6s ease-in-out infinite alternate;z-index:2}
+.pill i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:8px}
+.pill.a{right:-4%;top:58%}.pill.b{right:6%;top:72%;animation-delay:-2s}.pill.c{right:-2%;top:86%;animation-delay:-4s}
+@keyframes flut{to{transform:translateY(-10px)}}
+.chip .sl{width:26px;height:26px;border-radius:6px;background:var(--ac-soft);display:grid;place-items:center;color:var(--ac);font-family:var(--display);font-weight:600}
+@media (max-width:880px){.pill.a{right:0}.pill.c{right:2%}}
+.mtrack span::after{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.area{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 28px;position:relative;overflow:hidden;transition:transform .6s var(--ease),border-color .4s}
+.area:hover{transform:translateY(-5px);border-color:var(--gold)}
+.area .n{font-family:var(--display);font-size:3.2rem;line-height:1;color:var(--ac-soft);position:absolute;right:20px;top:14px;transition:color .5s}
+.area:hover .n{color:var(--gold)}
+.area h3{font-size:1.55rem;margin:0 0 12px}
+.area p{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.area ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:.92rem}
+.area li{display:flex;gap:10px}.area li::before{content:"";width:6px;height:6px;margin-top:9px;flex:none;background:var(--ac);transform:rotate(45deg)}
+@media (max-width:900px){.areas{grid-template-columns:1fr}}
+.tri{background:var(--ink);color:#EDE6E0;border-radius:20px;padding:clamp(26px,5vw,60px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:start}
+.tri .eyebrow{color:#D9B676}.tri h2 em{color:#E7B9C2}.tri .lead{color:#B9AFAA;margin-top:18px}
+.etapas{display:flex;gap:6px;margin-bottom:18px}.etapas i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.12);transition:background .4s}.etapas i.on{background:var(--gold)}
+.painel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;min-height:300px}
+.painel h3{font-family:var(--display);font-size:1.35rem;margin:0 0 14px;color:#fff}
+.ops{display:grid;gap:8px}
+.op{text-align:left;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:#EDE6E0;border-radius:12px;padding:13px 15px;font:500 .93rem var(--body);cursor:pointer;transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.op:hover{border-color:var(--gold);background:rgba(184,145,74,.12);transform:translateX(4px)}
+.res ul{margin:8px 0 16px;padding-left:18px;font-size:.92rem;color:#D8CEC8}.res li{margin:4px 0}
+.res .tag{display:inline-block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#D9B676;margin-bottom:6px}
+.res .btn.p{background:#25D366;border-color:#25D366;color:#0A3D1F}.res .btn.p::before{background:#fff}
+.voltar{background:none;border:0;color:#B9AFAA;font:500 .85rem var(--body);cursor:pointer;margin-top:14px;padding:0;text-decoration:underline}
+.aviso{font-size:.78rem;color:#8F8580;margin-top:14px}
+.fade{animation:fd .5s var(--ease)}@keyframes fd{from{opacity:0;transform:translateY(10px)}}
+@media (max-width:900px){.tri{grid-template-columns:1fr}}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.passo{padding:28px 22px 0 0}.passo+.passo{padding-left:22px;border-left:1px solid var(--line)}
+.passo .n{font-family:var(--display);font-size:1rem;color:var(--ac2);margin-bottom:14px}
+.passo h3{font-size:1.3rem;margin:0 0 8px}.passo p{margin:0;color:var(--muted);font-size:.94rem}
+@media (max-width:900px){.passos{grid-template-columns:1fr 1fr}.passo:nth-child(3){padding-left:0;border-left:0}.passo{padding-bottom:26px}}
+@media (max-width:520px){.passos{grid-template-columns:1fr}.passo,.passo+.passo{padding:22px 0;border-left:0;border-bottom:1px solid var(--line)}}
+.horario{display:grid;gap:4px;font-size:.95rem}
+.cbox::after{content:"B";position:absolute;right:-10px;bottom:-60px;font-family:var(--display);font-size:16rem;line-height:1;color:var(--ac-soft);z-index:0}
+.previa{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:41;background:var(--ink);color:#fff;font-size:.78rem;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+@media (max-width:880px){.previa{left:16px;right:88px;transform:none;white-space:normal;text-align:center;font-size:.72rem;bottom:calc(env(safe-area-inset-bottom,0px) + 28px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="g"><div class="wrap bar">
+  <a class="brand" href="#inicio"><span class="logo">B</span><span><b>Brignol Advogados</b><small>Família · Previdenciário · Trabalhista</small></span></a>
+  <nav class="main"><a class="lk" href="#areas">Áreas</a><a class="lk" href="#triagem">Antes de chamar</a><a class="lk" href="#como">Como atendemos</a><a class="lk" href="#duvidas">Dúvidas</a><a class="btn sm p mag" href="#contato">Falar com o escritório</a>
+    <button class="menu-btn" id="mb" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </nav>
+</div></div></header>
+<div class="mnav" id="mn"><a href="#areas">Áreas</a><a href="#triagem">Antes de chamar</a><a href="#como">Como atendemos</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></div>
+
+<main id="inicio">
+  <section class="hero g"><canvas class="silk" aria-hidden="true" data-c0="#F6F4F1" data-c1="#EBDCD9" data-c2="#FFFFFF" data-c3="#EFE2CC"></canvas><div class="wrap hgrid">
+    <div>
+      <div class="eyebrow ld">Advocacia em Pelotas · Centro</div>
+      <h1 class="split">Seus direitos tratados <em>com atenção e clareza.</em></h1>
+      <p class="ld">O Brignol Advogados atua em Direito de Família, Previdenciário e Trabalhista. Explicamos cada etapa do processo em linguagem simples e acompanhamos o seu caso de perto.</p>
+      <div class="cta ld">
+        <a class="btn p mag" href="#triagem">Contar meu caso <span class="ar">→</span></a>
+        <a class="tlink" href="#areas">Ver áreas de atuação</a>
+      </div>
+    </div>
+    <div class="stage ld">
+      <div class="back" id="bk"></div>
+      <div class="cut" id="cut"><span class="mono">B</span><small>Brignol Advogados</small>
+        <svg class="balanca" viewBox="0 0 64 64"><path d="M32 8v48M20 56h24M12 18h40M12 18l-8 18h16zM52 18l-8 18h16zM4 36a8 4 0 0 0 16 0M44 36a8 4 0 0 0 16 0"/></svg></div>
+      <span class="pill a"><i></i>Família</span><span class="pill b"><i></i>Previdenciário</span><span class="pill c"><i></i>Trabalhista</span>
+      <div class="chip" id="c1"><span class="sl">§</span><span><b>Igor Brignol Salvador</b><small>Advogado · OAB/RS 000.000</small></span></div>
+    </div>
+  </div></section>
+
+  <div class="marquee" aria-hidden="true"><div class="mtrack">
+    <span>Divórcio</span><span>Pensão alimentícia</span><span>Guarda</span><span>Aposentadoria</span><span>Auxílio-doença</span><span>BPC/LOAS</span><span>Rescisão</span><span>Horas extras</span>
+    <span>Divórcio</span><span>Pensão alimentícia</span><span>Guarda</span><span>Aposentadoria</span><span>Auxílio-doença</span><span>BPC/LOAS</span><span>Rescisão</span><span>Horas extras</span>
+  </div></div>
+
+  <section id="areas" class="g"><div class="wrap">
+    <div class="shead">
+      <div><div class="eyebrow rv">Áreas de atuação</div><h2 class="split" style="margin-top:18px">Três áreas, <em>um só cuidado.</em></h2></div>
+      <p class="lead rv">Questões de família, de aposentadoria e de trabalho mexem com a vida inteira. Por isso o atendimento começa ouvindo com calma e explicando o que pode ser feito.</p>
+    </div>
+    <div class="areas">
+      <article class="area rv"><span class="n">01</span><h3>Família</h3><p>Para resolver com o máximo de diálogo e o mínimo de desgaste.</p><ul><li>Divórcio e dissolução de união estável</li><li>Pensão alimentícia</li><li>Guarda e convivência</li><li>Inventário e partilha</li></ul></article>
+      <article class="area rv"><span class="n">02</span><h3>Previdenciário</h3><p>Para garantir o benefício certo junto ao INSS.</p><ul><li>Aposentadorias</li><li>Auxílio-doença e incapacidade</li><li>BPC/LOAS</li><li>Revisão de benefício negado</li></ul></article>
+      <article class="area rv"><span class="n">03</span><h3>Trabalhista</h3><p>Para entender e buscar o que é seu por direito.</p><ul><li>Rescisão e verbas não pagas</li><li>Horas extras</li><li>Acidente de trabalho</li><li>Vínculo sem carteira assinada</li></ul></article>
+    </div>
+  </div></section>
+
+  <section id="triagem" class="g" style="padding-top:0"><div class="wrap">
+    <div class="tri rv">
+      <div>
+        <div class="eyebrow">Antes de chamar</div>
+        <h2 class="split" style="margin-top:18px">Conte seu caso <em>em três toques.</em></h2>
+        <p class="lead">Escolha a área e a situação. No fim, você vê quais documentos separar e já chama o escritório no WhatsApp com tudo explicado.</p>
+      </div>
+      <div>
+        <div class="etapas"><i class="on"></i><i></i><i></i></div>
+        <div class="painel" id="pn" aria-live="polite"></div>
+        <p class="aviso">Isto é só uma organização inicial. A análise do seu caso é feita pelo advogado.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="como" class="g" style="padding-top:0"><div class="wrap">
+    <div class="shead"><div><div class="eyebrow rv">Como atendemos</div><h2 class="split" style="margin-top:18px">Do primeiro contato <em>ao fim do processo.</em></h2></div></div>
+    <div class="passos">
+      <div class="passo rv"><div class="n">I</div><h3>Primeiro contato</h3><p>Você chama no WhatsApp e conta, em poucas palavras, o que está acontecendo.</p></div>
+      <div class="passo rv"><div class="n">II</div><h3>Consulta</h3><p>Analisamos seus documentos e explicamos os caminhos possíveis.</p></div>
+      <div class="passo rv"><div class="n">III</div><h3>Estratégia</h3><p>Definimos juntos o melhor caminho, com prazos e próximos passos claros.</p></div>
+      <div class="passo rv"><div class="n">IV</div><h3>Acompanhamento</h3><p>Você recebe as atualizações do processo sem precisar ficar perguntando.</p></div>
+    </div>
+  </div></section>
+
+  <section class="g" style="padding-top:0"><div class="wrap sobre">
+    <div>
+      <div class="eyebrow rv">O escritório</div>
+      <h2 class="split" style="margin:18px 0 0">Advocacia próxima, <em>aqui no Centro.</em></h2>
+      <dl class="creds rv">
+        <div><dt>Responsável</dt><dd>Igor Brignol Salvador · OAB/RS 000.000</dd></div>
+        <div><dt>Áreas</dt><dd>Direito de Família, Previdenciário e Trabalhista</dd></div>
+        <div><dt>Atendimento</dt><dd>Presencial no Centro de Pelotas e online</dd></div>
+      </dl>
+    </div>
+    <p class="quote rv">Cada processo carrega uma história. Nosso trabalho é <em>cuidar dela</em> com técnica, transparência e respeito ao seu tempo.</p>
+  </div></section>
+
+  <section id="duvidas" class="g" style="padding-top:0"><div class="wrap faqg">
+    <div><div class="eyebrow rv">Dúvidas</div><h2 class="split" style="margin-top:18px">Perguntas <em>comuns.</em></h2></div>
+    <div class="rv">
+      <div class="q"><button type="button" aria-expanded="false">O INSS negou meu benefício. Ainda dá para fazer algo?<span class="pl"></span></button><div class="a"><div><p>Em muitos casos, sim. É possível recorrer ou entrar com ação. Traga a carta de indeferimento e seus documentos para avaliarmos.</p></div></div></div>
+      <div class="q"><button type="button" aria-expanded="false">Existe prazo para entrar com ação trabalhista?<span class="pl"></span></button><div class="a"><div><p>Sim, em regra até dois anos depois de sair da empresa. Por isso vale buscar orientação o quanto antes.</p></div></div></div>
+      <div class="q"><button type="button" aria-expanded="false">Dá para fazer o divórcio sem briga?<span class="pl"></span></button><div class="a"><div><p>Sim. Quando há acordo, o divórcio pode ser feito de forma consensual, e em alguns casos até em cartório.</p></div></div></div>
+      <div class="q"><button type="button" aria-expanded="false">Vocês atendem online?<span class="pl"></span></button><div class="a"><div><p>Sim. Boa parte do atendimento pode ser feita pelo WhatsApp e por videochamada.</p></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="contato" class="g" style="padding-top:0;padding-bottom:30px"><div class="wrap">
+    <div class="cbox rv">
+      <div>
+        <div class="eyebrow">Contato</div>
+        <h2 class="split" style="margin-top:18px">Vamos conversar <em>sobre o seu caso?</em></h2>
+        <p class="lead">Chame no WhatsApp e conte o que está acontecendo. Retornamos o quanto antes.</p>
+        <div class="cta" style="margin-top:28px"><a class="btn p mag" href="https://wa.me/5553999996858?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20um%20caso." target="_blank" rel="noopener">Chamar no WhatsApp <span class="ar">→</span></a></div>
+      </div>
+      <dl class="cinfo">
+        <div><dt>WhatsApp</dt><dd>(53) 99999-6858</dd></div>
+        <div><dt>Endereço</dt><dd>Rua Manduca Rodrigues, 346 · Centro · Pelotas/RS<br><a href="https://www.google.com/maps/search/Brignol+Advogados+Pelotas" target="_blank" rel="noopener">Abrir no mapa</a></dd></div>
+        <div><dt>Horário</dt><dd class="horario"><span>Segunda a sexta</span><span>8h às 12h · 13h30 às 18h</span></dd></div>
+      </dl>
+    </div>
+    <footer>
+      <span>Brignol Advogados · Igor Brignol Salvador · OAB/RS 000.000</span>
+      <span class="demo">Prévia feita pela Atende Já</span>
+    </footer>
+  </div></section>
+  <div class="previa">Prévia exclusiva para o Brignol Advogados · Atende Já</div>
+</main>
+
+<a class="wa" id="wa" href="https://wa.me/5553999996858?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20um%20caso." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg></a>
+
+<script>
+/* Triagem: área → situação → resultado com documentos e WhatsApp */
+const T={"Família":{"Divórcio ou fim de união estável":["Certidão de casamento ou prova da união","Documentos dos bens (imóveis, veículos)","Certidão de nascimento dos filhos, se houver"],"Pensão alimentícia":["Certidão de nascimento da criança","Comprovantes de gastos da criança","Informações sobre a renda da outra parte"],"Guarda ou convivência":["Certidão de nascimento da criança","Comprovante de residência","Relato da rotina atual da criança"],"Inventário":["Certidão de óbito","Documentos dos bens deixados","Documentos dos herdeiros"]},
+"Previdenciário":{"Aposentadoria":["Carteira de trabalho","Extrato do CNIS (Meu INSS)","Documentos pessoais"],"Auxílio-doença negado":["Carta de indeferimento do INSS","Laudos e atestados médicos","Extrato do CNIS"],"BPC/LOAS":["Documentos de todos da casa","Comprovante de renda da família","Laudos médicos, se for por deficiência"],"Revisão de benefício":["Carta de concessão do benefício","Extrato do CNIS","Carteira de trabalho"]},
+"Trabalhista":{"Fui demitido e não recebi tudo":["Carteira de trabalho","Termo de rescisão","Contracheques"],"Horas extras não pagas":["Contracheques","Registros de ponto ou mensagens com horários","Carteira de trabalho"],"Acidente de trabalho":["CAT (se houve)","Atestados e laudos","Carteira de trabalho"],"Trabalhei sem carteira assinada":["Mensagens, fotos ou comprovantes de pagamento","Nome de colegas que podem confirmar","Período aproximado trabalhado"]}};
+const URG=["Tenho um prazo ou audiência marcada","Quero resolver logo","Só quero orientação por enquanto"];
+const pn=document.getElementById("pn"),et=[...document.querySelectorAll(".etapas i")];let sel={};
+const step=n=>et.forEach((e,i)=>e.classList.toggle("on",i<=n));
+const ops=(t,list,fn,back)=>{pn.innerHTML=`<div class="fade"><h3>${t}</h3><div class="ops">${list.map((o,i)=>`<button class="op" data-i="${i}">${o}</button>`).join("")}</div>${back?'<button class="voltar">Voltar</button>':""}</div>`;
+  pn.querySelectorAll(".op").forEach(b=>b.onclick=()=>fn(list[+b.dataset.i]));if(back)pn.querySelector(".voltar").onclick=back};
+function s1(){step(0);sel={};ops("Qual é a área do seu caso?",Object.keys(T),a=>{sel.a=a;s2()})}
+function s2(){step(1);ops("O que está acontecendo?",Object.keys(T[sel.a]),s=>{sel.s=s;s3()},s1)}
+function s3(){step(2);ops("Qual a urgência?",URG,u=>{sel.u=u;res()},s2)}
+function res(){const docs=T[sel.a][sel.s],msg=`Olá! Vim pelo site do Brignol Advogados.\n\nÁrea: ${sel.a}\nSituação: ${sel.s}\nUrgência: ${sel.u}\n\nGostaria de agendar uma conversa.`;
+  pn.innerHTML=`<div class="fade res"><span class="tag">${sel.a} · ${sel.s}</span><h3>Separe estes documentos</h3><ul>${docs.map(d=>`<li>${d}</li>`).join("")}</ul><a class="btn p" href="https://wa.me/5553999996858?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">Enviar meu caso no WhatsApp <span class="ar">→</span></a><br><button class="voltar">Começar de novo</button></div>`;
+  pn.querySelector(".voltar").onclick=s1}
+s1();
+document.querySelectorAll(".q button").forEach(b=>b.onclick=()=>{const q=b.parentElement,o=q.hasAttribute("data-open");q.toggleAttribute("data-open",!o);b.setAttribute("aria-expanded",!o)});
+const mb=document.getElementById("mb");
+mb.onclick=()=>{const o=document.body.classList.toggle("menu-open");mb.setAttribute("aria-expanded",o)};
+document.querySelectorAll("#mn a").forEach(a=>a.addEventListener("click",()=>{document.body.classList.remove("menu-open");mb.setAttribute("aria-expanded","false")}));
+const hd=document.getElementById("hd"),wa=document.getElementById("wa"),cut=document.getElementById("cut"),bk=document.getElementById("bk"),c1=document.getElementById("c1");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let tk=false;
+function upd(){tk=false;const H=innerHeight,y=scrollY;hd.classList.toggle("on",y>20);wa.classList.toggle("on",y>600);
+  if(!reduce){const s=cut.parentElement.getBoundingClientRect(),k=innerWidth<880?.45:1,p=Math.max(-1,Math.min(1,(s.top+s.height/2-H/2)/H));
+    cut.style.transform=`translateX(-50%) translateY(${(-p*40*k).toFixed(1)}px)`;bk.style.transform=`translateY(${(p*20*k).toFixed(1)}px)`;c1.style.transform=`translateY(${(p*30*k).toFixed(1)}px)`}}
+addEventListener("scroll",()=>{if(!tk){tk=true;requestAnimationFrame(upd)}},{passive:true});addEventListener("resize",upd);upd();
+if(!reduce){
+  document.documentElement.classList.add("mo");
+  document.querySelectorAll(".split").forEach(h=>{
+    let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.append(t);return}const w=document.createElement("span");w.className="w";const s=document.createElement("span");s.textContent=t;s.style.transitionDelay=(i++*60)+"ms";w.append(s);f.append(w)});c.replaceWith(f)}else walk(c)})};
+    walk(h);
+  });
+  document.querySelectorAll(".split,.rv").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight*.92)el.classList.add("pre")});
+  const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".pre").forEach(el=>io.observe(el));
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add("go")));
+  if(matchMedia("(hover:hover)").matches){
+    document.querySelectorAll(".mag").forEach(b=>{
+      b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+      b.addEventListener("pointerleave",()=>{b.style.transform=""});
+    });
+  }
+}
+</script>
+<script>
+/* Fundo de seda animado (WebGL leve, pausa fora da tela) */
+(function(){
+  document.querySelectorAll("canvas.silk").forEach(cv=>{
+    const gl=cv.getContext("webgl",{antialias:false,premultipliedAlpha:false,alpha:false});
+    if(!gl){cv.classList.add("nogl");return}
+    const hex=h=>{h=h.replace("#","");return[0,2,4].map(i=>parseInt(h.substr(i,2),16)/255)};
+    const C0=hex(cv.dataset.c0),C1=hex(cv.dataset.c1),C2=hex(cv.dataset.c2),C3=hex(cv.dataset.c3||cv.dataset.c1);
+    const vs="attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}";
+    const fs=`precision mediump float;uniform vec2 r;uniform float t;uniform vec3 c0,c1,c2,c3;
+    void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv*2.-1.;p.x*=r.x/r.y;p*=1.6;float s=t*.09;
+      for(int i=1;i<6;i++){float f=float(i);p.x+=.42/f*sin(f*1.25*p.y+s*1.3+.4*f)+.55;p.y+=.36/f*cos(f*1.05*p.x+s+.5*f)-.4;}
+      float v=.5+.5*sin(p.x*1.5+p.y*1.8);float cr=1.-abs(sin((p.x+p.y*.8)*1.3+s*.4));
+      float hi=pow(cr,7.)*.9+pow(v,6.)*.5;float sh=pow(1.-v,2.5);
+      vec3 col=mix(c0,c1,smoothstep(.15,.95,v));col=mix(col,c3,sh*.55);col=mix(col,c2,clamp(hi,0.,1.)*.85);
+      gl_FragColor=vec4(col,1.);}`;
+    const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o};
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){cv.classList.add("nogl");return}
+    gl.useProgram(pr);
+    const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+    const loc=gl.getAttribLocation(pr,"a");gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+    const U=n=>gl.getUniformLocation(pr,n);gl.uniform3fv(U("c0"),C0);gl.uniform3fv(U("c1"),C1);gl.uniform3fv(U("c2"),C2);gl.uniform3fv(U("c3"),C3);
+    const ur=U("r"),ut=U("t");
+    const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const scale=innerWidth<880?.35:.5;
+    function size(){const w=Math.max(2,Math.round(cv.clientWidth*scale)),h=Math.max(2,Math.round(cv.clientHeight*scale));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;gl.viewport(0,0,w,h)}gl.uniform2f(ur,w,h)}
+    let run=true,raf=0,t0=performance.now(),off=18;
+    function draw(now){size();gl.uniform1f(ut,off+(now-t0)/1000);gl.drawArrays(gl.TRIANGLES,0,6);if(run&&!still)raf=requestAnimationFrame(draw)}
+    draw(performance.now());
+    if(!still){
+      new IntersectionObserver(e=>{const vis=e[0].isIntersecting;if(vis&&!run){run=true;raf=requestAnimationFrame(draw)}else if(!vis){run=false;cancelAnimationFrame(raf)}}).observe(cv);
+      document.addEventListener("visibilitychange",()=>{if(document.hidden){run=false;cancelAnimationFrame(raf)}else{run=true;raf=requestAnimationFrame(draw)}});
+    }
+    addEventListener("resize",()=>{if(still)draw(performance.now())});
+  });
+})();
+</script>
+
+</body>
+</html>
