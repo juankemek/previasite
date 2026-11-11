@@ -1,4 +1,38 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/advogado/",
+      "destination": "/advocacia/"
+    },
+    {
+      "source": "/cardiologista/",
+      "destination": "/medico/"
+    },
+    {
+      "source": "/psicologia/",
+      "destination": "/psicologa/"
+    },
+    {
+      "source": "/psiquiatria/",
+      "destination": "/psiquiatra/"
+    },
+    {
+      "source": "/nutricao/",
+      "destination": "/nutricionista/"
+    },
+    {
+      "source": "/odontologia/",
+      "destination": "/dentista/"
+    },
+    {
+      "source": "/contabilidade/",
+      "destination": "/contador/"
+    },
+    {
+      "source": "/arquitetura/",
+      "destination": "/arquiteto/"
+    }
+  ]
 }
