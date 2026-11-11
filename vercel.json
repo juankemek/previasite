@@ -34,5 +34,47 @@
       "source": "/arquitetura/",
       "destination": "/arquiteto/"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/advogado",
+      "destination": "/advogado/",
+      "permanent": false
+    },
+    {
+      "source": "/cardiologista",
+      "destination": "/cardiologista/",
+      "permanent": false
+    },
+    {
+      "source": "/psicologia",
+      "destination": "/psicologia/",
+      "permanent": false
+    },
+    {
+      "source": "/psiquiatria",
+      "destination": "/psiquiatria/",
+      "permanent": false
+    },
+    {
+      "source": "/nutricao",
+      "destination": "/nutricao/",
+      "permanent": false
+    },
+    {
+      "source": "/odontologia",
+      "destination": "/odontologia/",
+      "permanent": false
+    },
+    {
+      "source": "/contabilidade",
+      "destination": "/contabilidade/",
+      "permanent": false
+    },
+    {
+      "source": "/arquitetura",
+      "destination": "/arquitetura/",
+      "permanent": false
+    }
   ]
 }
